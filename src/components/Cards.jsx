@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 function Cards({ data, reference }) {
   return (
-    <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.1 }} dragElastic={0.1} dragTransition={{ bounceStiffness: 100, bounceDamping: 30 }} className='relative flex-shrink-0 w-60 h-72 rounded-[45px] bg-zinc-900/90 text-white px-8 py-10 overflow-hidden'>
+    <motion.div drag dragConstraints={reference} whileDrag={{ scale: 1.2 }} dragElastic={0.1} dragTransition={{ bounceStiffness: 600, bounceDamping: 10 }} className='relative flex-shrink-0 w-60 h-72 rounded-[45px] bg-zinc-900/90 text-white px-8 py-10 overflow-hidden'>
       <FaRegFileAlt />
       <p className='text-sm leading-tight mt-5 font-semibold'>{data.desc}</p>
       <div className='footer absolute bottom-0 w-full left-0'>
@@ -18,7 +18,14 @@ function Cards({ data, reference }) {
         </div>
         {data.tag && data.tag.isOpen && (
           <div className={`tag w-full py-4 ${data.tag.tagColor === "blue" ? "bg-blue-600" : "bg-green-600"} flex items-center justify-center`}>
-            <h3 className='text-sm font-semibold'>{data.tag.tagTitle}</h3>
+            {data.tag.tagTitle === "Download CV" ? (
+              // Anchor tag to download CV
+              <a href="/Khushavant_Wagh_CV.pdf" download className="text-sm font-semibold text-white">
+                {data.tag.tagTitle}
+              </a>
+            ) : (
+              <h3 className='text-sm font-semibold'>{data.tag.tagTitle}</h3>
+            )}
           </div>
         )}
       </div>

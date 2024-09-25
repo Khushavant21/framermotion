@@ -6,7 +6,7 @@ function Foreground() {
 
     const data = [
         { desc: "Hello, I am Khushavant Wagh", filesize: ".9mbs", close: false, tag: { isOpen: true, tagTitle: "Test Download", tagColor: "green" } },
-        { desc: "I am Software Engineer", filesize: ".9mbs", close: true, tag: { isOpen: true, tagTitle: "Download Now", tagColor: "blue" } },
+        { desc: "I am Software Engineer", filesize: ".9mbs", close: true, tag: { isOpen: true, tagTitle: "Download CVzz", tagColor: "blue" } },
         { desc: "Say Hello to Me! 😁", filesize: ".9mbs", close: false, tag: { isOpen: true, tagTitle: "Upload", tagColor: "green" } },
     ];
 
